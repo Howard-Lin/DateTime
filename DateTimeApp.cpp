@@ -9,7 +9,7 @@ int main()
     // time : 1658583226
     // date time : 2022-07-23 21:33:46
     DateTime date(2022 , 07 , 23, 21,33 , 46);
-    std::cout << "date time : " << date.GetTime() << std::endl;
+    std::cout << "date time : " << date << std::endl;
 
     DateTime date2 = date;
     std::cout << "date2 : " << date2.ToString().c_str() << std::endl;
@@ -19,6 +19,31 @@ int main()
 
     DateTime date4 = 1658583226;
     std::cout << "date4 : " << date4.ToString().c_str() << std::endl;
+
+    // test operator ==
+    std::cout << "date(" << date << ") == date2(" << date2 << ") =>";
+    if (date == date2)
+        std::cout << " true" << std::endl;
+    else
+        std::cout << " false" << std::endl;
+    date3 = 1658583227;
+    std::cout << "date(" << date << ") == date3(" << date3 << ") =>";
+    if (date == date3)
+        std::cout << " true" << std::endl;
+    else
+        std::cout << " false" << std::endl;
+
+    // test operator !=
+    std::cout << "date(" << date << ") != date2(" << date2 << ") =>";
+    if (date != date2)
+        std::cout << " true" << std::endl;
+    else
+        std::cout << " false" << std::endl;
+    std::cout << "date(" << date << ") != date3(" << date3 << ") =>";
+    if (date != date3)
+        std::cout << " true" << std::endl;
+    else
+        std::cout << " false" << std::endl;
 }
 
 // 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表

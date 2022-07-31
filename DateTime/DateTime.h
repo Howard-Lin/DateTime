@@ -20,17 +20,26 @@ public:
     DateTime() { SetTime(0); }
     ~DateTime() {}
     DateTime(long long time);
-    DateTime& operator=(long long time)
-    {
-        SetTime(time);
-        return *this;
-    }
+    operator time_t();
+    DateTime& operator=(long long time);
+    bool operator==(time_t time);
+    bool operator==(DateTime time);
+    bool operator!=(time_t time);
+    bool operator!=(DateTime time);
+    bool operator>(time_t time);
+    bool operator>(DateTime time);
+    bool operator>=(time_t time);
+    bool operator>=(DateTime time);
+    bool operator<(time_t time);
+    bool operator<(DateTime time);
+    bool operator<=(time_t time);
+    bool operator<=(DateTime time);
+
     DateTime(unsigned short year, unsigned char month, unsigned char monthDay,
         unsigned char hour, unsigned char minute, unsigned char second);
     void SetTime(long long time);
     void SetDateTime(unsigned short year, unsigned char month, unsigned char monthDay,
         unsigned char hour, unsigned char minute, unsigned char second);
     std::string ToString();
-    time_t GetTime() { return m_time; }
 };
 

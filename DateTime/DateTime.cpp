@@ -13,6 +13,77 @@ DateTime::DateTime(long long time)
     SetTime(time);
 }
 
+DateTime::operator time_t()
+{
+    return m_time;
+}
+
+DateTime& DateTime::operator=(long long time)
+{
+    SetTime(time);
+    return *this;
+}
+
+bool DateTime::operator==(time_t time)
+{
+    return m_time == time;
+}
+
+bool DateTime::operator==(DateTime time)
+{
+    return m_time == time;
+}
+
+bool DateTime::operator!=(time_t time)
+{
+    return m_time != time;
+}
+
+bool DateTime::operator!=(DateTime time)
+{
+    return m_time != time;
+}
+
+bool DateTime::operator>(time_t time)
+{
+    return m_time > time;
+}
+
+bool DateTime::operator>(DateTime time)
+{
+    return m_time > time;
+}
+
+bool DateTime::operator>=(time_t time)
+{
+    return m_time >= time;
+}
+
+bool DateTime::operator>=(DateTime time)
+{
+    return m_time >= time;
+}
+
+bool DateTime::operator<(time_t time)
+{
+    return m_time < time;
+}
+
+bool DateTime::operator<(DateTime time)
+{
+    return m_time < time;
+}
+
+bool DateTime::operator<=(time_t time)
+{
+    return m_time <= time;
+}
+
+bool DateTime::operator<=(DateTime time)
+{
+    return m_time <= time;
+}
+
 DateTime::DateTime(unsigned short year, unsigned char month, unsigned char monthDay, unsigned char hour, unsigned char minute, unsigned char second)
 {
     SetDateTime(year, month, monthDay, hour, minute, second);
